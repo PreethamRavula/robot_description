@@ -26,12 +26,12 @@ def main():
         vel_msg = Twist()
 
         # Set linear and angular velocities
-        vel_msg.linear.x = 0.3 # move in x-direction with 0.5 m/s
+        vel_msg.linear.x = 0.3 # move in x-direction with 0.3 m/s
         vel_msg.linear.y = 0.0
         vel_msg.linear.z = 0.0
         vel_msg.angular.x = 0.0
         vel_msg.angular.y = 0.0
-        vel_msg.angular.z = 0.3 # rotate with 0.1 rad/sec
+        vel_msg.angular.z = 0.3 # rotate with 0.3 rad/sec
 
         velocity_publisher.publish(vel_msg)
 
