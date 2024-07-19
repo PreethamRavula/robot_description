@@ -4,10 +4,14 @@
     
     <xacro:include filename="$(find robot_description)/urdf/robot.gazebo" />
     
+    <!-- Parameters -->
+    <xacro:property name="chassis_mass" value="10" />
+    <xacro:property name="pi" value="3.1415926" />
+
     <!-- Link - chassis -->
     <link name="link_chassis">
         <inertial>
-            <mass value="10" />
+            <mass value="${chassis_mass}" />
             <origin xyz="0 0 0.3" rpy="0 0 0" />
             <inertia ixx="1.5417" ixy="0" ixz="0" iyy="3.467" iyz="0" izz="4.742" />
         </inertial>
@@ -48,13 +52,13 @@
 
         <!-- Tires -->
         <collision>
-            <origin rpy="1.5707 0 0" xyz="0 0.18 0" />
+            <origin rpy="${pi/2} 0 0" xyz="0 0.18 0" />
             <geometry>
                 <cylinder length="0.12" radius="0.4"/>
             </geometry>
         </collision>
         <visual>
-            <origin rpy="1.5707 0 0" xyz="0 0.18 0" />
+            <origin rpy="${pi/2} 0 0" xyz="0 0.18 0" />
             <geometry>
                 <mesh filename="package://robot_description/meshes/wheel.stl" />
             </geometry>
@@ -65,13 +69,13 @@
 
         <!-- Axle -->
         <collision>
-            <origin rpy="1.5707 0 0" xyz="0 0.06 0" />
+            <origin rpy="${pi/2} 0 0" xyz="0 0.06 0" />
             <geometry>
                 <cylinder length="0.12" radius="0.08"/>
             </geometry>
         </collision>
         <visual>
-            <origin rpy="1.5707 0 0" xyz="0 0.06 0" />
+            <origin rpy="${pi/2} 0 0" xyz="0 0.06 0" />
             <geometry>
                 <cylinder length="0.12" radius="0.08"/>
             </geometry>
@@ -82,7 +86,7 @@
 
         <!-- Hubcap -->
         <visual>
-            <origin rpy="1.5707 0 0" xyz="0 0.25 0" />
+            <origin rpy="{pi/2} 0 0" xyz="0 0.25 0" />
             <geometry>
                 <box size="0.02 0.5 0.02" />
             </geometry>
@@ -112,13 +116,13 @@
 
         <!-- Tires -->
         <collision>
-            <origin rpy="1.5707 0 0" xyz="0 -0.18 0" />
+            <origin rpy="${pi/2} 0 0" xyz="0 -0.18 0" />
             <geometry>
                 <cylinder length="0.12" radius="0.4"/>
             </geometry>
         </collision>
         <visual>
-            <origin rpy="1.5707 0 0" xyz="0 -0.18 0" />
+            <origin rpy="${pi/2} 0 0" xyz="0 -0.18 0" />
             <geometry>
                 <mesh filename="package://robot_description/meshes/wheel.stl" />
             </geometry>
@@ -129,13 +133,13 @@
 
         <!-- Axle -->
         <collision>
-            <origin rpy="1.5707 0 0" xyz="0 -0.06 0" />
+            <origin rpy="${pi/2} 0 0" xyz="0 -0.06 0" />
             <geometry>
                 <cylinder length="0.12" radius="0.08"/>
             </geometry>
         </collision>
         <visual>
-            <origin rpy="1.5707 0 0" xyz="0 -0.06 0" />
+            <origin rpy="${pi/2} 0 0" xyz="0 -0.06 0" />
             <geometry>
                 <cylinder length="0.12" radius="0.08"/>
             </geometry>
@@ -146,7 +150,7 @@
 
         <!-- Hubcap -->
         <visual>
-            <origin rpy="1.5707 0 0" xyz="0 0.25 0" />
+            <origin rpy="${pi/2} 0 0" xyz="0 0.25 0" />
             <geometry>
                 <box size="0.02 0.5 0.02" />
             </geometry>
